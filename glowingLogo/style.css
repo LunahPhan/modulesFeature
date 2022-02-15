@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+body{
+    overflow: hidden;
+}
+section{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(red,rgba(0,0,0,0.5)),
+    url(./img/login.jpg);
+    background-blend-mode: multiply;
+    animation: animateBgColor 5s linear infinite;
+}
+section::before{
+    content:"";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) ;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(rgba(255,0,0,0.75), transparent, transparent);
+    border-radius: 50%;;
+}
+section::after{
+    content:"";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) ;
+    width: 1000px;
+    height: 1000px;
+    background: radial-gradient(rgba(255,0,0,0.75), transparent, transparent);
+    border-radius: 50%;;
+}
+.icon{
+    position: relative;
+    margin-bottom: 90px;
+    height: 200px;
+    width: 200px;
+    z-index: 1;
+    text-align: center;
+}
+.icon svg path{
+    stroke: white;
+    stroke-width: 10px;
+    fill: transparent;
+    filter: drop-shadow(0px 20px 10px black) blur(2px);
+}
+@keyframes animateBgColor
+{
+    0%
+    {
+        filter: hue-rotate(0deg);
+    }
+    100%
+    {
+        filter: hue-rotate(360deg);
+    }
+}
+section h2{
+    margin-left: 15px;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 10px;
+    font-size: 30px;
+    text-shadow: 0 10px 10px black;
+    box-shadow: 10px 0 0 white;
+    overflow: hidden;
+    animation: textTyping 3s steps(15) infinite;
+    position: absolute;
+    margin-top: 290px;
+}
+@keyframes textTyping
+{
+    0%,90%,100%
+    {
+        width: 0%;
+    }
+    30%,60%
+    {
+       width: 550px; 
+    }
+}
